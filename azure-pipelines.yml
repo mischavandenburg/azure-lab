@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'The Lab'
+  azureSubscription: 'mischalab'
 
 steps:
   - task: AzureCLI@2
@@ -17,7 +17,7 @@ steps:
       scriptLocation: 'inlineScript'
       inlineScript: |
         # Create a resource group.
-        az group create --name keyVaultRG --location westeurope
+        # az group create --name keyVaultRG --location westeurope
 
         # deploy key vault template
-        az deployment group create --resource-group keyVaultRG --template-file keyvault.bicep --parameters keyvault1.bicepparam
+        az deployment group create --resource-group coffee --template-file keyvault.bicep --parameters keyvault1.bicepparam
