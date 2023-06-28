@@ -1,3 +1,3 @@
 using './keyvault.bicep'
 
-param keyVaultName = 'kv-mischa-${uniqueString('coffee')}'
+param keyVaultName = 'kv-mischa-${uniqueString('mischacoffee')}'
