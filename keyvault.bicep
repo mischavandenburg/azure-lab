@@ -15,5 +15,6 @@ resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' = {
       family: 'A'
     }
     tenantId: subscription().tenantId
+    enableRbacAuthorization: true
   }
 }
