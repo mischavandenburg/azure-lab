@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'mtest'
+  azureSubscription: 'atest'
 
 steps:
   - task: AzureCLI@2
