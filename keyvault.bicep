@@ -4,7 +4,7 @@
 param location string = resourceGroup().location
 
 @description('KeyVault name')
-param keyVaultName string
+param keyVaultName string = 'keyvault${uniqueString(resourceGroup().id, utcNow())}'
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   name: keyVaultName
