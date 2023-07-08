@@ -4,7 +4,7 @@
 param location string = resourceGroup().location
 
 @description('KeyVault name')
-param keyVaultName string = 'keyvault${uniqueString(resourceGroup().id, utcNow())}'
+param keyVaultName string = 'key-vault-${uniqueString(resourceGroup().id, utcNow())}'
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   name: keyVaultName
@@ -16,5 +16,8 @@ resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' = {
     }
     tenantId: subscription().tenantId
     enableRbacAuthorization: true
+    enableSoftDelete: false
   }
 }
+
+output keyvaultName string = keyvault.name
